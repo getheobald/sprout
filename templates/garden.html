@@ -1,0 +1,47 @@
+<!--validated-->
+{% extends 'base.html' %}
+
+{% block title %}Sprout | Garden{% endblock %}
+
+{% block body %}
+
+  <div>
+    <br/> <br/>
+    <div id="garden_buttons">
+      <a class="navbutton_inverse" href="addplant">add a plant</a>
+      <a class="navbutton_inverse" href="removeplant">remove a plant</a>
+    </div>
+    <br/> <br/> <br/>
+    <div class="garden">
+      {% for i in queryResults %}
+        <div class="garden_subplant popup_button" onclick="plantInfoPopup(this);">
+          <img class="garden_images" src="{{i.image}}" alt="{{i.latin_name}}" width=200 height=230>
+          <br/>
+          {{i.common_name}}
+          <div class="actual_popup plantInfo">
+            <p class="popup_common">{{i.common_name}}</p>
+            <p class="popup_latin">{{i.latin_name}}</p>
+            <p>"{{i.nickname}}"</p>
+            <div class="popup_main_content">
+              <img class="garden_images image_border" src="{{i.image}}" alt="{{i.latin_name}}" width=190 height=218>
+              <div>
+                you got {{i.nickname}} on <span class="bold">{{i.date}}</span>, and it lives in your <span class="bold">{{i.room}}</span>.<br/> <br/>
+                this plant should be watered every <span class="bold">{{i.water}}</span> days and fertilized every <span class="bold">{{i.fertilize}}</span> weeks.
+                it should be placed in <span class="bold">{{i.sun}}</span>.<br/> <br/>
+                it can be propagated by: <span class="bold">{{i.propagate}}</span><br/> <br/>
+                <span>your note:</span>
+                {% if i.note != "" %}
+                  <span class="bold">{{i.note}}</span>
+                {% else %}
+                  <span>none</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <br/>
+  </div>
+
+{% endblock %}

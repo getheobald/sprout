@@ -1,0 +1,54 @@
+<!--validated-->
+{% extends 'base.html' %}
+
+{% block title %}Sprout | Add Plant{% endblock %}
+
+{% block body %}
+
+  <div id="addplantpage">
+    <br/>
+    <div id="addplantpage_left">
+      <form method="POST">
+        <span>choose a plant!</span>
+        <select class="round_corners" name="plant" required>
+          <option value="">select</option>
+          {% for i in queryResults %}
+            <option value="{{i.latin_name}}">{{i.common_name}} ({{i.latin_name}})</option>
+          {% endfor %}
+        </select>
+        <br/> <br/> <br/>
+        <span>date acquired:</span>
+        <input class="round_corners remove_bevel" type="date" name="date" required/>
+        <br/> <br/> <br/>
+        <span>what room is this plant in?</span>
+        <select class="round_corners" name="room" required>
+          <option value="">select</option>
+          <option value="living room">living room</option>
+          <option value="dining room">dining room</option>
+          <option value="kitchen">kitchen</option>
+          <option value="bathroom">bathroom</option>
+          <option value="bedroom">bedroom</option>
+          <option value="playroom">playroom</option>
+          <option value="laundry room">laundry room</option>
+          <option value="sunroom">sunroom</option>
+          <option value="garage">garage</option>
+          <option value="other">other</option>
+        </select>
+        <br/> <br/> <br/>
+        <span>what's its nickname?</span>
+        <input class="round_corners remove_bevel" type="text" name="nickname" required/>
+        <br/> <br/>
+        <p>add a note about this plant:</p>
+        <textarea class="round_corners remove_bevel" placeholder="appearance, special care notes, etc." name="note" rows="5" cols="45"></textarea> <br/>
+        <input class="navbutton_inverse remove_bevel" type="submit" value="add plant"/>
+      </form>
+    </div>
+    <div id="addplantpage_right">
+      <p id="bigger_font">don't see what you want?</p>
+      <br/>
+      <a class="navbutton_inverse" href="addplantmanual">add manually</a>
+    </div>
+    <br/> <br/>
+  </div>
+
+{% endblock %}

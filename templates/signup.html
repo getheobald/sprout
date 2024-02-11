@@ -1,0 +1,31 @@
+<!--validated-->
+{% extends 'base.html' %}
+
+{% block title %}Sprout | Sign Up{% endblock %}
+
+{% block body %}
+
+  <div class="center_align">
+    <form method="POST">
+      <div class="form">
+        <span>first name:</span>
+        <input class="round_corners remove_bevel" type="text" name="first_name" required/>
+        <br/> <br/> <br/>
+        <span>last name:</span>
+        <input class="round_corners remove_bevel" type="text" name="last_name" required/>
+        <br/> <br/> <br/>
+        <span>username:</span>
+        <input class="round_corners remove_bevel" type="text" name="username" required/>
+        <br/> <br/> <br/>
+        <span>email:</span>
+        <input class="round_corners remove_bevel" type="email" name="email" required/>
+        <br/> <br/> <br/>
+        <span>password:</span>
+        <input class="round_corners remove_bevel" type="password" name="password" required/>
+      </div>
+      <br/> <br/>
+      <input class="navbutton_inverse remove_bevel" type="submit" value="sign up"/>
+    </form>
+  </div>
+
+  {% endblock %}

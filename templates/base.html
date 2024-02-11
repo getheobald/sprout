@@ -1,0 +1,25 @@
+<!--validated-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="static/logo2.png">
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+    <script src="static/functions.js"></script>
+  </head>
+  <body>
+    <header>
+      <a id="no_underline" href=".">
+        <div id="namelogo">
+          <img id="logo" src="static/logo2.png" alt="plant logo" width="30" height="34">
+          <h1>sprout</h1>
+        </div>
+      </a>
+      <div id="navigation">
+        <a class="navbutton" href="garden">garden</a>
+        <a class="navbutton" href="logout">log out</a>
+      </div>
+    </header>
+    {% block body %} {% endblock %}
+  </body>
+</html>

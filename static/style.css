@@ -1,0 +1,396 @@
+body
+{
+  margin: auto;
+  text-align: center;
+  background-color: #CFE9CE;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+header
+{
+  /*josh helped me figure out some of the code for my header bar
+  by explaining flexboxes and some things you can do with them*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #31722D;
+}
+
+#namelogo
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#no_underline
+{
+  text-decoration: none;
+}
+
+/*https://www.tutorialspoint.com/css/css_positioning.htm*/
+#logo
+{
+  position: relative;
+  top: 3px;
+}
+
+#navigation
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbutton
+{
+  margin: 5px 20px;
+  padding: 5px;
+  text-decoration: none;
+  color: #31722D;
+  font-weight: bold;
+  border-color: #FFFFFF
+  border: 3px solid;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+.navbutton_inverse
+{
+  margin-top: 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-color: #FFFFFF
+  border: 3px solid;
+  border-radius: 3px;
+  background-color: #31722D;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 16px;
+}
+
+h1
+{
+  font-size: 24px;
+  color: #FFFFFF;
+  margin: 10px;
+}
+
+/*extremely confusing but definitely lifesaving:
+https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid-column-row-start-end*/
+.garden
+{
+  margin: 15px 85px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 55px;
+}
+
+.garden_subplant
+{
+  border: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #31722D;
+}
+
+/*to figure out how to resize images I referenced this:
+https://stackoverflow.com/questions/12991351/css-force-image-resize-and-keep-aspect-ratio
+and ended up using the information from this:
+https://www.digitalocean.com/community/tutorials/css-cropping-images-object-fit*/
+.garden_images
+{
+  display: inline;
+  object-fit: cover;
+  padding: 6px;
+}
+
+#home
+{
+  margin: 35px 50px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+}
+
+#potd
+{
+  width: 230px;
+}
+
+#home_note
+{
+  color: #31722D;
+  font-size: 10px;
+}
+
+#home_image
+{
+  position: relative;
+  top: 90px;
+  border: 4px solid white;
+  border-radius: 4px;
+}
+
+h2, h3
+{
+  color: #31722D;
+}
+
+#site_buttons
+{
+  text-align: center;
+}
+
+.spacing
+{
+  margin: 8px;
+}
+
+#addplantpage
+{
+  margin: 15px 200px;
+  color: #163B0A;
+}
+
+#addplantpage_left
+{
+  float: left;
+  text-align: left;
+  font-size: 20px;
+}
+
+#addplantpage_right
+{
+  float: right;
+  position: relative;
+  top: 60px;
+}
+
+#bigger_font
+{
+  font-size: 25px;
+}
+
+.remove_bevel
+{
+  border: 0;
+}
+
+select
+{
+  background-color: #EFF8EE;
+  border: 4px solid white;
+  color: #163B0A;
+  font-family: "Trebuchet MS", sans-serif;
+  height: 30px;
+}
+
+textarea
+{
+  resize: vertical;
+}
+
+#addplantmanual
+{
+  margin: 50px 140px;
+  color: #163B0A;
+  font-size: 18px;
+}
+
+#manual_add_note
+{
+  border: 4px solid white;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+#manual_add_left
+{
+  float: left;
+  text-align: left;
+}
+
+#manual_add_right
+{
+  float: right;
+  text-align: right;
+}
+
+#manual_add_button
+{
+  float: right;
+  position: relative;
+  top: 485px;
+  left: 225px;
+  width: 100px;
+  height: 35px;
+}
+
+.round_corners
+{
+  border-radius: 4px;
+}
+
+.form
+{
+  text-align: right;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  color: #163B0A;
+  font-size: 18px;
+}
+
+.center_align
+{
+  display: flex;
+  justify-content: center;
+}
+
+/*popup stuff
+https://www.w3schools.com/howto/howto_js_popup.asp*/
+
+.popup_button
+{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/*could not for the life of me figure out how to center the popup
+so I got the transform/translate thing from here:
+https://stackoverflow.com/questions/11021766/how-do-i-center-javascript-css-popup-div-no-matter-what-the-screen-resolution*/
+.popup_button .actual_popup
+{
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  overflow: auto;
+  border: 4px solid;
+  border-color: #31722D;
+  border-radius: 8px;
+  background-color: #EFF8EE;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+}
+
+/*
+I wanted to add a feature where the entire page blurred
+when I opened a popup. Spent way too much time on it and still couldn't get it to work
+so I'll just leave this code here in case I ever return to this project for some reason
+and feel like trying to work with it again.
+
+//document.body.classList.add("blur");
+
+body .show :not(.actual_popup)
+{
+  position: relative;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.garden .actual_popup :not(#unblurred)
+{
+  filter: blur(4px);
+}
+
+.garden .show
+{
+  filter: blur(4px);
+}
+
+.unblurred
+{
+  filter: blur(0px);
+}
+
+https://stackoverflow.com/questions/54122806/how-to-make-background-blur-when-html-popup-modal-opens/54122959
+https://stackoverflow.com/questions/29642055/popup-with-blurred-background-in-css3-and-html
+https://stackoverflow.com/questions/42827504/blur-all-but-one-element-in-the-body/42827732
+*/
+
+.popup_button .show
+{
+  visibility: visible;
+}
+
+.popup_common
+{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+.popup_latin
+{
+  font-style: italic;
+  margin-bottom: -10px;
+}
+
+.popup_main_content
+{
+  text-align: left;
+  display: flex;
+  gap: 40px;
+  margin: 30px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+#home_popup_main_content
+{
+  margin: 40px;
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
+.image_border
+{
+  border: 7px solid;
+  border-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+#garden_buttons
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#special_height
+{
+  height: 112px;
+}
+
+#remove_plant_note
+{
+  margin-top: 80px;
+  border: 5px solid white;
+  border-radius: 5px;
+  background-color: #EFF8EE;
+  margin-left: 390px;
+  margin-right: 390px;
+  padding: 15px;
+}
+
+#remove_plant_button
+{
+  position: relative;
+  top: 1px;
+}

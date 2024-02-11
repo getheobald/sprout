@@ -1,0 +1,84 @@
+<!--validated-->
+{% extends 'base.html' %}
+
+{% block title %}Sprout | Add Plant{% endblock %}
+
+{% block body %}
+
+  <div id="addplantmanual">
+
+    <p id="manual_add_note">the more details you add,
+    the more you will be able to see about your plant later! <br/>
+    also, the plant data you add here will be available to other users,
+    so please be respectful and complete.</p>
+    <br/> <br/>
+
+    <form method="POST">
+      <div id="manual_add_left">
+        <span>common name:</span>
+        <input class="round_corners remove_bevel" type="text" name="common_name" required/>
+        <br/> <br/> <br/>
+        <span>latin name:</span>
+        <input class="round_corners remove_bevel" type="text" name="latin_name" required/>
+        <br/> <br/> <br/>
+        <span>days between watering:</span>
+        <input class="round_corners remove_bevel" type="number" name="water" required/>
+        <br/> <br/> <br/>
+        <span>weeks between fertilization:</span>
+        <input class="round_corners remove_bevel" type="number" name="fertilize" required/>
+        <br/> <br/> <br/>
+        <span>how much sun does it need?</span>
+        <select class="round_corners" name="sun" required>
+          <option value="">select</option>
+          <option value="full sun">full sun</option>
+          <option value="partial sun">partial sun</option>
+          <option value="partial shade">partial shade</option>
+          <option value="full shade">full shade</option>
+        </select>
+        <br/> <br/>
+        <p>how can it be propagated?</p>
+        <select id="special_height" class="round_corners" name="propagate" multiple required>
+          <option value="budding and grafting">budding and grafting</option>
+          <option value="cutting">cutting</option>
+          <option value="division">division</option>
+          <option value="layering">layering</option>
+          <option value="sowing">sowing</option>
+          <option value="tissue culture">tissue culture</option>
+        </select>
+        <br/> <br/> <br/>
+        <span>link to a clean image of plant:</span>
+        <input class="round_corners remove_bevel" type="text" name="image" required/>
+        <br/> <br/> <br/> <br/> <br/>
+      </div>
+
+      <div id="manual_add_right">
+        <span>date acquired:</span>
+        <input class="round_corners remove_bevel" type="date" name="date" required/>
+        <br/> <br/> <br/>
+        <span>what room is this plant in?</span>
+        <select class="round_corners" name="room" required>
+          <option value="">select</option>
+          <option value="living room">living room</option>
+          <option value="dining room">dining room</option>
+          <option value="kitchen">kitchen</option>
+          <option value="bathroom">bathroom</option>
+          <option value="bedroom">bedroom</option>
+          <option value="playroom">playroom</option>
+          <option value="laundry room">laundry room</option>
+          <option value="sunroom">sunroom</option>
+          <option value="garage">garage</option>
+          <option value="other">other</option>
+        </select>
+        <br/> <br/> <br/>
+        <span>what's its nickname?</span>
+        <input class="round_corners remove_bevel" type="text" name="nickname" required/>
+        <br/>
+        <br/>
+        <p>add a note about this plant:</p>
+        <textarea class="round_corners remove_bevel" placeholder="appearance, special care notes, etc." name="note" rows="12" cols="45"></textarea> <br/>
+      </div>
+      <input class="navbutton_inverse remove_bevel" id="manual_add_button" type="submit" value="add plant" />
+    </form>
+  </div>
+
+{% endblock %}

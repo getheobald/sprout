@@ -1,0 +1,49 @@
+<!--validated-->
+{% extends 'base.html' %}
+
+{% block title %}Sprout | Home{% endblock %}
+
+{% block body %}
+
+  <div id="home">
+    <div>
+      <h2>plant of the day</h2>
+      <p id="home_note">aka plant of the page-reload<br/>because that was far easier</p>
+      <br/>
+
+      {% for i in plantData %}
+        <div id="potd" class="garden_subplant popup_button" onclick="plantInfoPopup(this);">
+          <img class="garden_images" src="{{i.image}}" alt="{{i.latin_name}}" width=200 height=230>
+          <br/>
+          {{i.common_name}}
+          <div class="actual_popup plantInfo">
+            <p class="popup_common">{{i.common_name}}</p>
+            <p class="popup_latin">{{i.latin_name}}</p>
+            <div class="popup_main_content" id="home_popup_main_content">
+              <img class="garden_images image_border" src="{{i.image}}" alt="{{i.latin_name}}" width=190 height=218>
+              <div>
+                this plant should be watered every <span class="bold">{{i.water}}</span> days and fertilized every <span class="bold">{{i.fertilize}}</span> weeks.
+                it should be placed in <span class="bold">{{i.sun}}</span>.<br/> <br/>
+                it can be propagated by: <span class="bold">{{i.propagate}}</span><br/> <br/>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <div>
+      <h3>apps like this website but better:</h3>
+      <br/>
+      <div id="site_buttons">
+        <a class="navbutton_inverse spacing" href="https://www.picturethisai.com/">picture this</a>
+        <a class="navbutton_inverse spacing" href="https://www.inaturalist.org/pages/seek_app">seek</a>
+        <a class="navbutton_inverse spacing" href="https://www.plantsnap.com/">plant snap</a>
+        <a class="navbutton_inverse spacing" href="https://blossomplant.com/">blossom</a>
+      </div>
+      <img id="home_image" src="static/homeplants.jpg" alt="plant_clipart" width=520 height=211>
+    </div>
+  </div>
+
+{% endblock %}

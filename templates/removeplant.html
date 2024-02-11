@@ -1,0 +1,24 @@
+<!--validated-->
+{% extends 'base.html' %}
+
+{% block title %}Sprout | Remove Plant{% endblock %}
+
+{% block body %}
+
+  <div>
+    <p id="remove_plant_note">if your plant died :( or found a new home :) ...<br/> <br/>
+      remove it from your garden!
+    </p>
+    <br/>
+    <form method="POST">
+      <select class="round_corners" name="plant" required>
+        <option value="">select</option>
+        {% for i in queryResults %}
+          <option value="{{i.latin_name}}, {{i.nickname}}">{{i.common_name}} "{{i.nickname}}" ({{i.latin_name}})</option>
+        {% endfor %}
+      </select>
+      <input id="remove_plant_button" class="navbutton_inverse remove_bevel" type="submit" value="remove plant" />
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!--validated-->
+{% extends 'base.html' %}
+
+{% block title %}Sprout | Log In{% endblock %}
+
+{% block body %}
+
+  <div class="center_align">
+    <form method="POST" action="login">
+      <div class="form">
+        <span>username:</span>
+        <input class="round_corners remove_bevel" type="text" name="username" required/>
+        <br/> <br/> <br/>
+        <span>password:</span>
+        <input class="round_corners remove_bevel" type="password" name="password" required/>
+        <br/> <br/>
+      </div>
+      <input class="navbutton_inverse remove_bevel" type="submit" value="log in"/>
+    </form>
+  </div>
+  <br/>
+  <br/>
+  <div>don't have an account? <a class="navbutton_inverse" href="signup">sign up</a></div>
+
+
+{% endblock %}
