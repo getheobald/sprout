@@ -96,7 +96,7 @@ def home():
     mysql.connection.commit()
     queryResultsTwo = cursorTwo.fetchall()
     plantData = queryResultsTwo
-    return render_template('home.html', plantData=plantData)
+    return render_template('index.html', plantData=plantData)
 
 #garden page
 #routes from button at the top of every page
